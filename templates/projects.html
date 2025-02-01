@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block title %}Projects{% endblock title %}
+
+{% block body %}
+<div class="container-heading">
+    <h2><i class="las la-angle-double-right">My Projects</i></h2>
+</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-2 mx-1">
+    {% for project in project %}
+    <div class="card mx-2 mb-2" style="width: 18rem;border-color:black;">
+        <img src="{{ project.image.url }}" class="img-fluid" style="height: 225px;width:400px"
+            alt="{{ project.title }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.desc }}</p>
+            <a href="{{ project.github_link }}" class="btn btn-outline-info" target="_blank">View On GitHub</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="container text-center mb-2">
+    <button type="button" class="btn btn-secondary">
+        <span class="lab la-github"></span>
+        View all projects</button>
+</div>
+{% endblock body%}

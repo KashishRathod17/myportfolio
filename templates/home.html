@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<!-- Hero Section -->
+<header class="hero">
+    <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Web Developer | Backend Developer | Tech Enthusiast</p>
+        <a href="/contact" class="btn btn-secondary mt-3">Get in Touch</a>
+        <a href="{% static 'pdf/Resume.pdf' %}" class="btn btn-secondary mt-3" target="_blank">Open My Resume</a>
+    </div>
+</header>
+{% endblock body %}

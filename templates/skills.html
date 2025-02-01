@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+{% block title %}Skiils{% endblock title %}
+
+{% block body %}
+<div class="container-heading">
+  <h2><i class="las la-angle-double-right">My Skiils</i></h2>
+</div>
+<div class="skills-container">
+  <!-- Left side block -->
+  <div class="skills-left">
+    <div class="container-skills">
+      <div>
+        <span class="las la-brush" style="font-size: 20px">
+          Design + Development</span
+        >
+      </div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <div>
+        <span class="las la-code" style="font-size: 20px"> Technology</span>
+      </div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <div>
+        <span class="las la-mobile-alt" style="font-size: 20px">
+          Always Responsive</span
+        >
+      </div>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+
+  <!-- Right side block -->
+  <div class="skills-right">
+    {%for skill in skills%}
+    <div class="skill">
+      <label for="{{skill.name}}"
+        >{{skill.name}}&nbsp;&nbsp;&nbsp;&nbsp;{{skill.progress}}%</label
+      >
+      <div class="progress-bar" id="{{skill.name}}">
+        <div class="progress" style="width: {{skill.progress}}%;"></div>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+{% endblock body%}

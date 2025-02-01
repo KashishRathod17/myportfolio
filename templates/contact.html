@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+<div class="container-fluid">
+  <div class="row g-0"> <!-- Added Bootstrap 'g-2' for small gap -->
+    <!-- Contact Form (Left Side) -->
+    <div class="col-lg-8">
+      <div class="container-contact">
+        <form method="post" action='/contact'>
+          <h4 class="text-center">Send a message</h4>
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone Number">
+          </div>
+          <div class="form-group">
+            <label for="msg">Message</label>
+            <textarea class="form-control" id="msg" name="msg" rows="3"
+              placeholder="Enter your Message here.."></textarea>
+          </div>
+          <button type="submit" class="btn btn-secondary my-2 w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Get in Touch Card (Right Side) -->
+    <div class="col-lg-4">
+      <div class="container-git">
+        <h5>Get In Touch</h5>
+        <div>
+          <h6>Phone :<br><span class="text-muted">+ (123) 456-789</span></h6>
+        </div>
+        <div>
+          <h6>Address :<br><span class="text-muted">12345 Fake ST, NoWhere, AB Country</span></h6>
+        </div>
+        <div>
+          <h6>Email :<br><span class="text-muted">info@domain.com</span></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
